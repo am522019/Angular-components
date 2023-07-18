@@ -1,0 +1,9 @@
+<div
+  [@state]="visibility"
+  id="av-alert-{{ uniqueId }}"
+  class="alert-banner alert-banner-{{ alert?.type }} {{ alert?.placement?.y }} {{ alert?.placement?.x }}"
+>
+  <div *ngIf="!alert?.messageAsHtml">{{ alert?.message }}</div>
+  <div *ngIf="alert?.messageAsHtml" [innerHTML]="alert?.message! | sanitize"></div>
+  <div (click)="confirm?.emit()" class="close-button"><i-feather name="x"></i-feather></div>
+</div>

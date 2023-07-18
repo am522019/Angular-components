@@ -1,0 +1,112 @@
+.modal-box-content-wrapper-md {
+  width: 500px;
+  position: relative;
+}
+.modal-box-content {
+  padding-top: 40px;
+  padding-bottom: 32px;
+}
+.modal-box {
+  display: flex !important;
+}
+.sa,
+.icon {
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+button {
+  cursor: pointer;
+}
+.sa {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.sa-success {
+    border: 2px solid #037f5f;
+  }
+  &.sa-warning {
+    border: 2px solid #ffab00;
+  }
+}
+.success-icon {
+  height: 38px;
+  width: 38px;
+  stroke-width: 1.5px;
+  color: #037f5f;
+}
+
+.warning-icon {
+  font: normal normal normal 26px/34px roboto;
+  letter-spacing: -0.52px;
+  color: #ffab00;
+}
+.decline-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-title {
+  font-size: 20px;
+  color: #152c5b;
+  margin-bottom: 4px;
+  margin-top: 16px;
+  font-weight: 800;
+}
+.sub-title {
+  font: normal normal normal 14px/19px Roboto;
+  letter-spacing: 0px;
+  color: #152c5b;
+  white-space: break-spaces;
+  text-align: center;
+}
+.confirm-bttn {
+  border-radius: 20px;
+  color: white;
+  background-color: #37c1ce;
+  font-size: 15px;
+  min-width: 100px;
+  font-family: 'roboto';
+  font-weight: normal;
+  height: 40px;
+  padding: 8px 16px;
+  border: unset;
+}
+.button-wrapper {
+  margin-top: 26px;
+}
+.bttn-cancel {
+  width: 100px;
+  color: #152c5b;
+  border: 1px solid #dee9ec;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 6px 24px;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  justify-content: center;
+}
+i {
+  position: absolute;
+  right: 46px;
+  top: 20px;
+  cursor: pointer;
+}
+.ng-invalid.ng-touched {
+  border-color: #fc2424 !important;
+}

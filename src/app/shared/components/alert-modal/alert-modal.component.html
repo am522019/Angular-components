@@ -1,0 +1,60 @@
+<div class="modal-box {{ alert?.customClass }}" id="alertModalWizard">
+  <div (@state.done)="animationDone($event)" [@state]="visibility" class="modal-box-content-wrapper modal-box-content-wrapper-md">
+    <div class="modal-box-content">
+      <i class="material-icons pull-right" (click)="close()" #closeModal>close</i>
+      <div class="decline-content">
+        <div *ngIf="alert?.iconName" class="alert-icon-holder">
+          <div [ngStyle]="alert?.iconColor ? { 'border-color': alert.iconColor || '' } : {}" class="sa sa-{{ alert?.iconName }}">
+            <div class="icon">
+              <i-feather
+                [ngStyle]="alert?.iconColor ? { color: alert.iconColor } : {}"
+                *ngIf="alert?.iconName === 'success'"
+                class="success-icon"
+                name="check"
+              ></i-feather>
+              <div
+                [ngStyle]="alert?.iconColor ? { color: alert.iconColor } : {}"
+                *ngIf="alert?.iconName === 'warning'"
+                class="warning-icon"
+              >
+                &#33;
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header">
+          <p [ngClass]="{ 'text-center': !alert?.iconName }" class="main-title">{{ alert?.title || 'Are you sure?' }}</p>
+          <p class="sub-title">
+            {{ alert?.subtitle || 'are you sure you want to leave?' }}
+          </p>
+        </div>
+        <div class="d-flex flex-col w-full">
+          <div class="w-100" *ngIf="alert?.input" class="form-group col-12 {{ faForm | showFieldStyle }}">
+            <label class="text-lg" for="{{ uniqueId }}">{{ alert?.labelName }} <span>*</span></label>
+            <div class="xmd:flex grid grid-cols-1">
+              <div class="form-append grow">
+                <input class="form-control w-full !p-4" type="text" [formControl]="faForm" id="{{ uniqueId }}" />
+              </div>
+            </div>
+
+            <ng-container >
+              <div class="error-messages">
+                <p>
+                  {{ errorMessage }}
+                </p>
+              </div>
+            </ng-container>
+          </div>
+          <div class="flex justify-center button-wrapper">
+            <button (click)="onCancel()" class="bttn-cancel">
+              {{ alert?.cancelButtonText || 'Cancel' }}
+            </button>
+            <button (click)="onConfirm()" class="confirm-bttn">
+              {{ alert?.confirmButtonText || 'Confirm' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
